@@ -123,9 +123,9 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_HOST = 'mail.tonymugendi.co.ke'
-EMAIL_HOST_USER = 'developer@tonymugendi.co.ke'
-EMAIL_HOST_PASSWORD = 'LILTONYlb26'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
