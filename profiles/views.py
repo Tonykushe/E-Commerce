@@ -2,6 +2,8 @@ from django.shortcuts import render
 from profiles.forms import *
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -9,11 +11,18 @@ def home(request):
 	args = locals()
 
 	return render(request, 'profiles/home.html', args)
-	
+
+@login_required
 def about(request):
 	args = locals()
 
 	return render(request, 'profiles/about.html', args)
+
+@login_required
+def profile(request):
+	user = request.user
+	context = {'user': user}
+	return render(request, 'profiles/profile.html', context)
 
 def contact(request):
 	title = 'Contact Us'
