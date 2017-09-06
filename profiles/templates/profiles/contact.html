@@ -1,0 +1,27 @@
+{% extends 'profiles/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%} Contact {% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h3>{{ title }}</h3>
+				{% if confirm_message %}
+					<p>{{ confirm_message }}</p>
+				{% endif %}
+			</div>
+			<div class="col-md-4">
+				{% if form %}
+				<form method="post">
+			  		{% csrf_token %}
+			  		{{ form|crispy }}
+			  		<button type="submit" class="btn btn-primary">Send</button>
+			  	</form>
+			  	{% endif %}
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
