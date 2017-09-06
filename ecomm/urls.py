@@ -20,6 +20,7 @@ from django.contrib import admin
 urlpatterns = [
 	url(r'^', include('profiles.urls', namespace='profiles')),
 	url(r'^accounts/', include('allauth.urls')),
+    url(r'^checkout', include('checkout.urls', namespace='checkout')),
     url(r'^admin/', admin.site.urls),
 
 
